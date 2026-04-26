@@ -1,193 +1,64 @@
-# Gui_RoboticArmSim
+## Overview
+This project appears to be a simple 3D model viewer for a robotic arm. It allows the user to rotate and manipulate the joints of a robotic arm by adjusting their angles through integer arrays. The project is built using C programming language and makes use of various libraries for graphics rendering, input handling, and data structure management.
 
+## Features
+- **Robotic Arm Model**: The model consists of multiple bones with joints that can be manipulated.
+- **Joint Manipulation**: Users can adjust the angles of the robotic arm's joints by providing integer arrays representing the path to each joint and the desired angle value.
+- **Rendering**: The robotic arm is rendered in a 3D space, allowing users to visualize the current state of the arm.
 
-## Project Overview
-
-This project implements specialized functionality related to roboticarmsim.
-
-## Core Components
-
-### Main Functionality
-- Implements core algorithms for roboticarmsim
-- Efficient data structures
-- Optimized performance
-- Clean code organization
-
-### Technical Features
-- C/C++ implementation
-- Dynamic memory management
-- Platform-independent design
-- Real-time capable
-
-### Architecture
-- Module separation
-- Clear interface design
-- Proper abstraction layers
-- Extensible design
-
-## Use Cases
-- Production systems
-- Educational purposes
-- Research applications
-- Performance-critical operations
-
-## Performance Characteristics
-- Optimized algorithms
-- Efficient memory usage
-- Scalable architecture
-- Minimal overhead
-
-## Implementation Quality
-- Well-organized code
-- Meaningful naming
-- Proper error handling
-- Memory management
-
-## Build and Deployment
-- Standard C/C++ compilation
-- Makefile-based building
-- Cross-platform support
-- Easy integration
-
-
-## Building the Project
+## Project Structure
+The project structure is well-organized, with different files and directories serving specific purposes:
+- `src/`: Contains the source code for the project. It includes `Main.c` which serves as the entry point, and various header files `.h`.
+- `Makefile.linux`, `Makefile.windows`, `Makefile.wine`, `Makefile.web`: These are build configuration files tailored for different platforms.
+- `README.md`: This document describes the project.
 
 ### Prerequisites
-- C/C++ Compiler (GCC, Clang, or MSVC)
+To build and run this project, you will need:
+- A C/C++ Compiler (GCC/Clang)
 - Make utility
 - Standard development tools
 
-### Build Steps
+## Build & Run
+The build process involves using Makefiles specific to each platform. Below are the steps for building the project on different operating systems:
 
-1. Navigate to project directory:
+### Linux
+To build the project on a Linux system, follow these steps:
 ```bash
-cd Gui_RoboticArmSim
+cd <Project>
+make -f Makefile.linux all
+```
+This will compile the source code and generate executable files in the `build/` directory.
+
+### Windows
+For Windows, use the following command:
+```bash
+cd <Project>
+make -f Makefile.windows all
 ```
 
-2. Build the project:
+### Wine (Cross-Compile for Windows on Linux)
+To build the project on Linux but produce a Windows executable:
 ```bash
-make -f Makefile.(os) all
+cd <Project>
+make -f Makefile.wine all
 ```
 
-3. For clean rebuild:
+### Emscripten (WebAssembly)
+For building the project into WebAssembly:
 ```bash
-make -f Makefile.(os) clean
-make -f Makefile.(os) all
+cd <Project>
+make -f Makefile.web all
 ```
 
-4. If there are ./bin and ./libs directories, build libs with:
-```bash
-make -f Makefile.(os) cleanlib
-make -f Makefile.(os) lib
-```
+## Build Options
+- `make -f Makefile.(os) all`: Builds the output executable.
+- `make -f Makefile.(os) do`: Builds and runs the executable.
+- `make -f Makefile.(os) clean`: Removes build artifacts.
 
-### Build Options
-```bash
-make -f Makefile.(os) all         # build output
-make -f Makefile.(os) do        # build + exe output
-make -f Makefile.(os) clean   # Remove build artifacts
-```
-
-## Running the Project
-
-Execute the compiled binary:
-
-```bash
-./build/Main(.exe)
-```
-
-Or using make:
+### Execute
+Once built, you can run the project using:
 ```bash
 make -f Makefile.(os) exe
 ```
 
-## Project Organization
-
-```
-Gui_RoboticArmSim/
-├── src/
-│   ├── Main.c          # Entry point
-│   └── *.c             # Implementation files
-├── Makefile            # Build configuration
-└── README.md           # This file
-```
-
-## Technical Details
-
-### Language: C/C++
-- Performance-oriented
-- Direct hardware access where needed
-- Memory efficient
-- Widely portable
-
-### Key Technologies
-- Standard C library
-- System-specific libraries as needed
-- Algorithm optimization
-- Efficient data structures
-
-### Code Quality
-- Clean, readable implementation
-- Proper error handling
-- Resource management
-- Well-documented algorithms
-
-## Development Notes
-
-### Architecture Decisions
-- Modular design for reusability
-- Efficient algorithms for performance
-- Clear separation of concerns
-- Extensible structure
-
-### Performance Optimizations
-- Algorithm efficiency
-- Memory layout optimization
-- Cache-conscious programming
-- Minimal overhead
-
-### Portability
-- Cross-platform compatible
-- Platform-specific optimizations where possible
-- Standard library usage
-- No external dependencies (where feasible)
-
-## Troubleshooting
-
-### Build Issues
-- Ensure compiler is installed
-- Check file paths and permissions
-- Verify Make installation
-- Review compiler error messages
-
-### Runtime Issues
-- Check input data validity
-- Verify file accessibility
-- Ensure sufficient memory
-- Review output format
-
-### Performance Issues
-- Check compiler optimization flags
-- Profile hot code paths
-- Review algorithm complexity
-- Consider input size
-
-## Future Improvements
-
-Potential enhancements:
-- Additional optimization opportunities
-- Extended functionality
-- Platform-specific optimizations
-- Performance profiling
-
-## References
-
-For technical background:
-- Algorithm textbooks
-- Computer science references
-- Language documentation
-- Online educational resources
-
----
-
-*Project implementing practical algorithms and data structures in C/C++*
+This README provides a comprehensive overview of the project structure, features, prerequisites, and build instructions.
